@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            html, body {
+                background: #f6f6f8;
+                font-family: Montserrat, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .card {
+                background: #fff;
+                box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+                margin: 1em;
+                padding: 1em;
+            }
+            .content {
+                width: 45em;
+                max-width: calc(100% - 2em);
+                margin: 1em auto;
+                padding: 1em;
+            }
+            hr {
+                border: none;
+                height: 1px;
+                background: rgba(0,0,0,0.3);
+                margin: 1em 0;
+            }
+            .measurement {
+                font-size: 2em;
+                color: #0055AA;
+            }
+            .grid {
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .grid > * {
+                flex-grow: 1;
+                min-width: 20em;
+                flex-basis: 0;
+            }
+            .mb-1 {
+                margin-bottom: 1em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <main class="content card">
+            <div class="grid">
+                <div class="mb-1">
+                    <label>Last RTT</label>
+                    <div class="measurement"><span id=val_rtt>n/a</span> ms</div>
+                </div>
+                <div class="mb-1">
+                    <canvas id="graph_rtt" width=320></canvas>
+                </div>
+            </div>
+            <hr />
+            <div class="grid">
+                <div class="mb-1">
+                    <label>95-percentile (5 minutes)</label>
+                    <div class="measurement"><span id=val_p95>n/a</span> ms</div>
+                </div>
+                <div class="mb-1">
+                    <canvas id="graph_p95" width=320></canvas>
+                </div>
+            </div>
+        </main>
+        <script src="/main.js"></script>
+    </body>
+</html>
