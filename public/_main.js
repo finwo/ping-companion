@@ -77,5 +77,5 @@ const chart_p95 = new Chart(graph_p95, {
   chart_rtt.update();
   chart_p95.update();
 
-  setTimeout(tick, 5000);
+  setTimeout(tick, 1000);
 })();
