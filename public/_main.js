@@ -44,7 +44,7 @@ const chart_p95 = new Chart(graph_p95, {
 });
 
 
-(async function tick() {
+setInterval(async () => {
 
   // Do the actual measurement
   const start = Date.now();
@@ -63,8 +63,8 @@ const chart_p95 = new Chart(graph_p95, {
   const p95     = ordered[Math.floor((ordered.length-1) * 0.95)];
 
   // Add data to graphs
-  graphdata.rtt.push({x:end,y:end-start});
-  graphdata.p95.push({x:end,y:p95.rtt});
+  graphdata.rtt.push({x:start,y:end-start});
+  graphdata.p95.push({x:start,y:p95.rtt});
 
   // Remove old data
   while (graphdata.rtt.length > 100) graphdata.rtt.shift();
@@ -77,5 +77,4 @@ const chart_p95 = new Chart(graph_p95, {
   chart_rtt.update();
   chart_p95.update();
 
-  setTimeout(tick, 1000);
-})();
+}, 1000);
