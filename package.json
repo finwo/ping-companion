@@ -22,7 +22,7 @@
     "esbuild": "^0.11.22",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.7",
-    "qs": "^6.10.1"
+    "qs": "^6.10.3"
   },
   "devDependencies": {
     "concurrently": "^6.1.0",
